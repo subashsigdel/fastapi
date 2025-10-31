@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Processor</title>
+</head>
+<body>
+    <h1>Upload Image</h1>
+    <form action="/process" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" required><br><br>
+        <label>Choose operation:</label>
+        <select name="operation">
+            <option value="grayscale">Grayscale</option>
+            <option value="rotate">Rotate 90°</option>
+        </select><br><br>
+        <button type="submit">Process</button>
+    </form>
+
+    {% if result_image %}
+    <h2>Result:</h2>
+    <img src="{{ result_image }}" alt="Processed Image">
+    {% endif %}
+</body>
+</html>
